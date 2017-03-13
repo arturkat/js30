@@ -1,0 +1,20 @@
+body {
+    padding: 50px;
+}
+
+.music-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.music-buttons button {
+    flex-grow: 1;
+}
+
+.music-buttons button {
+    transition: all 0.25s;
+}
+.music-buttons button.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px #8e1818;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./style.css">
+    <!-- js -->
+    <!-- <script src="../lib/angular/angular.js"></script> -->
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="./app.js"></script>
+</head>
+<!-- rump up angular -->
+<body ng-app="" >
+    <div class="container">
+        <div class="row piza-settings">
+            <h1 class="text-center">Update CSS Variables with <i>JS</i></h1>
+            <div class="col-xs-4">
+                <p>Spacing:</p>
+                <!-- slider -->
+                <input type="range" min="10" max="50" step="2" value="0" id="piza-padding" />
+            </div>
+            <div class="col-xs-4">
+                <p>Blur:</p>
+                <!-- slider -->
+                <input type="range" min="0" max="10" step="1" value="0" id="piza-blur" />
+            </div>
+            <div class="col-xs-4">
+                <p>Base Color:</p>
+                <!-- color picker -->
+                <input type="color" value="#dbc941" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="piza col-xs-6 col-xs-offset-3">
+                <img src="imgs/piza.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

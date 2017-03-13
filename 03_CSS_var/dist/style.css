@@ -1,0 +1,42 @@
+:root {
+    --piza-padding: 10px;
+    --piza-blur: 0px;
+    --piza-bg-color: #dbc941;
+}
+
+body {
+    padding: 20px;
+    background-color: #01515a;
+}
+.piza-settings {
+    margin-bottom: 40px;
+}
+.piza-settings h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+.piza-settings  p {
+    font-size: 19px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.piza-settings  input {
+    display: block;
+    width: 100%;
+}
+
+i {
+    color: var(--piza-bg-color);
+    font-style: normal;
+}
+.piza {
+    padding: var(--piza-padding);
+    background-color: var(--piza-bg-color);
+    filter: blur(var(--piza-blur));
+}
+.piza img {
+    max-width: 100%;
+}
