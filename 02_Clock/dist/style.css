@@ -1,0 +1,118 @@
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    background-image: url(imgs/clock_back.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.clock-dial {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+    width: 80vh;
+    min-width: 80vh;
+    height: 80vh;
+    border: 5vh solid rgba(1, 81, 90, 0.85);
+    /* border:  5vh solid rgb(0, 156, 135); */
+    border-radius: 100%;
+}
+
+.clock-dial .milliseconds,
+.clock-dial .seconds,
+.clock-dial .minutes,
+.clock-dial .hours,
+.clock-dial .center {
+    position: absolute;
+    /*rotate*/
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
+}
+
+/* .clock-dial .seconds {
+    transition: 0.1s transform;
+} */
+
+.clock-dial .center {
+    align-self: center;
+    width: 3vh;
+    height: 3vh;
+    border-radius: 100%;
+    background-color: black;
+    z-index: 10;
+}
+
+.clock-dial .milliseconds {
+    width: 4.5%;
+    height: calc(3.5% - 2px);
+    margin-top: 46.5%;
+    border-top: 2px solid rgba(0, 0, 0, 0.7);
+    border-radius: 100%;
+    /* padding-bottom: calc(6.5% - 5px); */
+    /* background-color: rgba(73, 40, 57, 0.83); */
+    background-clip: content-box;
+    box-sizing: content-box;
+}
+
+.clock-dial .seconds {
+    width: 0.5vh;
+    height: 45%;
+    margin-top: 5%;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.clock-dial .minutes {
+    width: 1vh;
+    height: 37%;
+    margin-top: 13%;
+    background-color: rgba(42, 105, 97, 0.81);
+}
+
+.clock-dial .hours {
+    width: 1.8vh;
+    height: 25%;
+    margin-top: 25%;
+    background-color: rgba(208, 85, 80, 0.84);
+}
+
+
+.clock-dial .line-x,
+.clock-dial .line-y {
+    align-self: center;
+    position: absolute;
+    width: 98%;
+    height: 0.5%;
+    background-color: rgba(0,0, 0, 0.1);
+}
+.clock-dial .line-y {
+    transform: rotate(90deg);
+}
+
+.clock-dial .dot-x-30,
+.clock-dial .dot-y-30,
+.clock-dial .dot-x-60,
+.clock-dial .dot-y-60 {
+    align-self: center;
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 0.5vh;
+    border-left: 10px solid rgba(0, 55, 76, 0.31);
+    border-right: 10px solid rgba(0, 55, 76, 0.31);
+    background-color: transparent;
+}
+.clock-dial .dot-x-30 {
+    transform: rotate(30deg);
+}
+.clock-dial .dot-y-30 {
+    transform: rotate(-30deg);
+}
+.clock-dial .dot-x-60 {
+    transform: rotate(60deg);
+}
+.clock-dial .dot-y-60 {
+    transform: rotate(-60deg);
+}
