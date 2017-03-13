@@ -1,0 +1,53 @@
+*** Quick start ***
+    bower install
+    npm install
+    gulp
+    'Livereload' in chrome
+
+
+** start Bower **
+    bower install
+    bower install <package> --save
+
+** start NPM **
+    npm install
+    npm install --save <module>
+
+
+____Run It____
+    gulp
+    enable 'Livereload' in chrome
+
+
+*******************
+** From Scratch **
+    ** Bower **
+    npm install -g bower
+    bower init    //to create initial file
+    bower install jquery
+    bower install <package> --save
+    bower install <package> --save-dev
+
+    ** NPM **
+    npm init
+    npm install
+    npm install 
+
+    ** Gulp **
+    npm install --global gulp
+    npm install --save-dev gulp
+    npm install --save-dev <gulp-concat-css>    //install package
+    ** Run __
+    gulp <task> <othertask>
+
+
+
+___ Links ___
+Bower: https://bower.io/docs/creating-packages/
+Livereload: https://www.npmjs.com/package/gulp-livereload
+Gulp-Connect: https://www.npmjs.com/package/gulp-connect
+Angular: https://angularjs.org/
+    https://www.codeschool.com/courses/shaping-up-with-angular-js
+
+
+
