@@ -1,5 +1,6 @@
 html,
 body {
+    font-size: 10px;
     /* height: 100vh;
     min-height: 100vh; */
 }
@@ -15,25 +16,45 @@ body {
     height: 100vh;
 
     .flex-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        /* flex child params */
+        flex-basis: 100px;
         flex-grow: 1;
-        /* flex-basis: 100%; */
-        background: no-repeat center center fixed;
-        background-size: cover;
-        transition: all 850ms;
-        transition-timing-function: cubic-bezier(0.65, -0.4, 0.47, 1.57);
         
+        background: no-repeat center center scroll;
+        background-size: cover;
+        transition: all 800ms;
+        transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        font-family: 'againtsregular';
+
         &.active {
             flex-grow: 5;
+            span.center {
+                /* font-size: 8vw; */
+            }
+            span.bottom {
+                opacity: 1;
+                animation-name: toBottom;
+                animation-duration: 800ms;
+            }
+            span.top {
+                opacity: 1;
+                animation-name: toTop;
+                animation-duration: 800ms;
+            }
         }
 
         &:nth-of-type(1) {
-            background-image: url(../../img/1.jpg);
+            background-image: url(../../img/3.jpg);
         }
         &:nth-of-type(2) {
             background-image: url(../../img/2.jpg);
         }
         &:nth-of-type(3) {
-            background-image: url(../../img/3.jpg);
+            background-image: url(../../img/6.jpg);
         }
         &:nth-of-type(4) {
             background-image: url(../../img/4.jpg);
@@ -41,5 +62,82 @@ body {
         &:nth-of-type(5) {
             background-image: url(../../img/5.jpg);
         }
+    }
+
+    span.center {
+        position: absolute;
+
+        color: #040517;
+        font-size: 5vw;
+        text-shadow: 0px 0px 17px #f1f1f1;
+        opacity: 0.9;
+        transition: font-size 500ms;
+        text-transform: uppercase;
+        /* animate */
+        animation-name: pulse;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+    }
+    span.additional {
+        opacity: 0;
+        color: #040517;
+        font-size: 2.5vw;
+        text-shadow: 0px 0px 4px #f1f1f1;
+        transition: opacity 800ms;
+    }
+}
+
+
+/* Add font */
+@font-face {
+  font-family: 'againtsregular';
+  src: url("../fonts/againts-webfont.woff2") format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Animation*/
+@keyframes floating {
+    from {
+        transform: translate(0, 0px) rotateY(-20deg);
+    }
+    50% {
+        transform: translate(0, 0px) rotateY(10deg) rotateX(10deg);
+    }
+    to {
+        transform: translate(0, 0px) rotateY(-20deg);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes toBottom {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes toTop {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
