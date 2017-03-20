@@ -1,8 +1,19 @@
+:root {
+  overflow: hidden;
+  user-select: none; }
+
 html,
 body {
   font-size: 10px;
-  /* height: 100vh;
-    min-height: 100vh; */ }
+  height: 100vh;
+  min-height: 100vh;
+  padding: 15px;
+  background-color: #060e1b; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .flex-gallery,
 .flex-gallery .flex-panel {
@@ -11,8 +22,11 @@ body {
 
 .flex-gallery {
   display: flex;
-  height: 100vh; }
+  /*height: 100%;*/ }
   .flex-gallery .flex-panel {
+    top: 100%;
+    right: 100%;
+    min-height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -24,9 +38,24 @@ body {
     background-size: cover;
     transition: all 800ms;
     transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
-    font-family: 'againtsregular'; }
+    font-family: 'againtsregular';
+    border-radius: 5px;
+    box-shadow: 0 0 10px #162e43;
+    cursor: pointer;
+    animation-name: panelPulse;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
     .flex-gallery .flex-panel.active {
-      flex-grow: 5; }
+      flex-grow: 5;
+      position: relative;
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 20vh;
+      width: 100%;
+      height: 60%; }
       .flex-gallery .flex-panel.active span.center {
         /* font-size: 8vw; */ }
       .flex-gallery .flex-panel.active span.bottom {
@@ -105,5 +134,11 @@ body {
   to {
     opacity: 1;
     transform: translateY(0); } }
+
+@keyframes panelPulse {
+  from {
+    transform: scale(1.1) rotate(-1.5deg); }
+  to {
+    transform: scale(1.4) rotate(3deg); } }
 
 /*# sourceMappingURL=maps/style.css.map */

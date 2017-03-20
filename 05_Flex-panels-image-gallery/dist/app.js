@@ -7,6 +7,11 @@ panels.forEach(function (panel) {
 });
 
 function animatePanel(e) {
+    if(this.classList.contains('active')) {
+        this.classList.remove('active');
+        return;
+    }
+
     var activePanel = document.querySelector('.flex-panel.active');
     if (activePanel) {
         activePanel.classList.remove('active');
