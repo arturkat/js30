@@ -31,8 +31,14 @@ function populateTheList() {
     suggestions.innerHTML = '';
 
     arrCitites.forEach((cityObj, index) => {
-        var li = document.createElement('li');
-        li.textContent = cityObj.city;
+        var li = document.createElement('li'),
+            span = document.createElement('span');
+
+        li.textContent = `${cityObj.city}, ${cityObj.state}`;
+        li.setAttribute('data-location', `${cityObj.city.toLowerCase()} ${cityObj.state.toLowerCase()}`);
+        span.textContent = `${cityObj.population}`;
+
+        li.appendChild(span);
         suggestions.appendChild(li);
     });
 }
@@ -40,11 +46,20 @@ function populateTheList() {
 function setListeners() {
     var search = document.querySelector('.search');
 
-    search.addEventListener('keydown', function (e) {
-        console.log(e.key);
+    search.addEventListener('input', function (e) {
+        var li = document.querySelectorAll('.suggestions li');
+        var searchStr = search.value.toLowerCase();
+
+        if (!li) return;
+
+        li.forEach((elem, index) => {
+            if (elem.dataset.location.indexOf(searchStr) > -1) {
+                elem.classList.remove('hide');
+            } else {
+                elem.classList.add('hide');
+            }
+        });
     });
 }
 
-
-// end
 }
